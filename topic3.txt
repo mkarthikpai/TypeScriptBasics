@@ -1,0 +1,51 @@
+// FUNCTIONS
+
+// First we need to specify what must be the parameter type and also the return type, if nothing then specify void
+// function abc(a: string, b:number):void {}
+
+// Explicit Return Type
+function abc(): string {
+  return "Hai";
+}
+
+// Implicit return type
+
+function kfc() {
+  return "yummmy";
+}
+
+// Optional Parameter
+function user(name: string, age: number, gender?: string) {
+  console.log(name, age, gender);
+}
+user("karthik", 25);
+
+// Default Parameter
+
+function mnc(name: string = "User") {
+  console.log(name);
+}
+
+mnc();
+mnc("TCS");
+
+// Rest PArameters
+function names(...names: string[]) {
+  console.log(names);
+}
+
+names("KP", "MP", "JP");
+
+// Type Assertions
+// If we have div element in html file
+function abcd() {
+  document.querySelector("p") as HTMLDivElement;
+}
+
+// Literal Types
+
+let stringornum: "karthik" | 15;
+
+stringornum = "karthik";
+stringornum = 15;
+// stringornum = njm  Gives error
