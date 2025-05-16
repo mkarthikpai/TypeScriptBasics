@@ -1,0 +1,141 @@
+// TYPE ALIASES
+
+// Primitive Type Aliases
+
+type sankhya = number;
+let a: sankhya;
+
+// Object Type Aliases
+
+type Dabba = {
+  weight: number;
+  color: string;
+};
+
+let dabba: Dabba = {
+  color: "#fff",
+  weight: 5,
+};
+
+// Union Type Aliases
+
+type Age = number | string;
+let ageOfUser: Age = 15;
+
+// ---------------------------------------------------------------------------------------
+
+// INTERFACES
+
+interface User {
+  name: string;
+  username: string;
+  age: number;
+  email: string;
+  password: string;
+}
+
+// function getUser(user:User) {
+//   user.name.charAt
+// }
+
+interface Food {
+  name: string;
+  price: number;
+}
+
+interface MithaFood extends Food {
+  sweetness: boolean;
+}
+
+function getMitaFood(mithai: MithaFood) {
+  mithai.name;
+}
+
+// ---------------------------------------------------------------------------------------
+
+// CLASSES
+
+// class Airpod {
+//   price = 15230;
+//   image = "images/airpod";
+//   color = "white";
+
+//   playMusic() {
+//     console.log("Music Playing...");
+//   }
+
+//   switchMode(mode: string) {
+//     console.log(mode);
+//   }
+// }
+
+class AirConditioner {
+  color = "white";
+  tonnes = 0.8;
+  category = "AC";
+
+  temperature = 22;
+
+  turnOn(name: string) {
+    console.log(`${name} Turning on...`);
+    console.log(`${name} Turned on.`);
+  }
+
+  turnOff() {
+    console.log("Turning off...");
+    console.log("Turned off");
+  }
+
+  raiseTemperature() {
+    this.temperature++;
+    console.log("Temperature Raised By 1:", this.temperature);
+  }
+
+  decreaseTemperature() {
+    console.log("Temperature decreased By 1");
+  }
+}
+
+let ac1 = new AirConditioner();
+ac1.turnOn("AC1");
+
+// CONSTRUCTOR
+
+class Pendrive {
+  public company: string;
+  constructor(name: string) {
+    this.company = name;
+  }
+}
+
+let p1 = new Pendrive("Sandisk");
+let p2 = new Pendrive("HP");
+// ----------
+
+// class User {
+//   name: string;
+//   email: string;
+//   password: string;
+//   image: string;
+//   constructor(name: string, email: string, password: string, image: string) {
+//     this.name = name;
+//     this.email = email;
+//     this.password = password;
+//     this.image = image;
+//   }
+// }
+
+// The same above can be written like
+class User {
+  constructor(
+    public name: string,
+    public email: string,
+    public password: string,
+    public image: string
+  ) {
+    this.name = name;
+    this.email = email;
+    this.password = password;
+    this.image = image;
+  }
+}

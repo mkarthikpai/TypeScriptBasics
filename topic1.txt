@@ -1,0 +1,89 @@
+// BASIC TYPES
+
+// Number, Strings, Boolean,
+// Arrays, Tuples
+// Any, Unknown, Never, Void
+// Enums
+
+let a: number;
+let arr: [];
+// let arr: number[];
+let str: string;
+let bl: boolean;
+
+// Tuple
+// Present only in TS and not in JS
+let arr2: [boolean, number, string] = [false, 10, "Hey"];
+//  Now if we do below part it works which is a loophole in TS
+arr2.push(4);
+
+let variable: any;
+variable = 5;
+variable = "Hey";
+
+let x: unknown; //Similar to any but has some differences
+
+// Never is used when no need to run
+
+function abcd(): number {
+  return 10;
+}
+
+// When function doesnt return something
+
+function fun(): void {
+  console.log("Hey!");
+}
+
+enum MousePosition {
+  x = 5,
+  y = 10,
+}
+console.log(MousePosition.x);
+
+// ----------------------------------------------------------------------------------------
+
+// TYPE INFERERNCE
+
+// We dont declare type directly but Typescript understands it
+let num = 5;
+let vum = "string";
+let bum = true;
+
+// ----------------------------------------------------------------------------------------
+
+// UNION AND INTERSECTION TYPES
+// union
+let uni: string | boolean;
+uni = "Latin";
+uni = true;
+
+function something(variable: number | string) {
+  if (typeof variable === "number") {
+    variable.toFixed(2);
+  } else if (typeof variable === "string") {
+    variable.toUpperCase();
+  }
+}
+
+something(10);
+something("Hello");
+
+// Intersection
+
+type city = {
+  name: string;
+  population: number;
+};
+
+type planet = {
+  name: string;
+  cities: number;
+};
+
+type CitiesInPlanet = city & planet;
+let value: CitiesInPlanet = {
+  name: "Bhopal",
+  population: 450015620,
+  cities: 15,
+};
